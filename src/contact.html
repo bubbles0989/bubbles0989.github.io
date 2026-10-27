@@ -62,10 +62,18 @@
 						window.addEventListener("pageshow", () => {
 							const submitted = new URLSearchParams(window.location.search).get("submitted") === "true";
 							const form = document.querySelector(".contact-form");
+							const submissionKey = "contact-form-submitted";
 
 							if (submitted && form) {
 								form.reset();
+								sessionStorage.setItem(submissionKey, "true");
 								window.history.replaceState(null, "", window.location.pathname + window.location.hash);
+								return;
+							}
+
+							if (form && sessionStorage.getItem(submissionKey) === "true") {
+								form.reset();
+								sessionStorage.removeItem(submissionKey);
 							}
 						});
 					</script>
