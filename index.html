@@ -3,9 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home</title>
+	<meta name="theme-color" content="#071421">
+	<title>Jasper | Byte4Byte Dot Dev</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	
+	<main class="index" id="home">
+		<div class="starfield" aria-hidden="true"></div>
+		<header class="site-header">
+			<a class="wordmark" href="#home" aria-label="Jasper home">Jasper<span>.dev</span></a>
+			<nav aria-label="Main navigation">
+				<a class="active" href="#home"><span>01</span>// home</a>
+				<a href="src/aboutme.html"><span>02</span>// about me</a>
+				<a href="src/work.html"><span>03</span>// work</a>
+				<a href="src/experience.html"><span>04</span>// experience</a>
+				<a href="src/contact.html"><span>05</span>// contact</a>
+			</nav>
+		</header>
+
+		<div class="planet" aria-hidden="true">
+			<img src="images/saturn-stars-transparent.png" alt="">
+		</div>
+
+		<section class="index-copy" aria-labelledby="page-title">
+			<p class="eyebrow">byte 4 byte dot dev</p>
+			<h1 id="page-title">Jasper</h1>
+			<p class="tagline">the iron in stardust is the very same in our veins</p>
+			<div class="specialties" aria-label="Areas of work">
+				<span>Codes</span><i aria-hidden="true">/</i>
+				<span>Worlds</span><i aria-hidden="true">/</i>
+				<span>Stars</span>
+			</div>
+		</section>
+		<a class="image-credit" href="https://photojournal.jpl.nasa.gov/catalog/PIA01364" target="blank" rel="noreferrer">
+			Saturn image: NASA / JPL
+		</a>
+	</main>
 </body>
 </html>
