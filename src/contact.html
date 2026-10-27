@@ -40,7 +40,9 @@
 					<h2>Good things start with a message.</h2>
 					<p>Use the form below to say somethin'.</p>
 					<form class="contact-form" action="https://formspree.io/f/mpppdnnk" method="POST">
+						<input type="hidden" name="_next" value="https://byte4byte.dev/src/contact.html?submitted=true">
 						<input type="hidden" name="_subject" value="New message from Jasper.dev">
+						<input class="contact-form-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
 						<div class="contact-form-field">
 							<label for="contact-name">Name</label>
 							<input id="contact-name" name="name" type="text" autocomplete="name" required>
@@ -56,6 +58,17 @@
 						<button class="contact-form-submit" type="submit">Send message <span aria-hidden="true">↗</span></button>
 					</form>
 					<p class="contact-form-disclaimer">Formspree will email me the information you share here. I’ll reply to you directly by email.</p>
+					<script>
+						window.addEventListener("pageshow", () => {
+							const submitted = new URLSearchParams(window.location.search).get("submitted") === "true";
+							const form = document.querySelector(".contact-form");
+
+							if (submitted && form) {
+								form.reset();
+								window.history.replaceState(null, "", window.location.pathname + window.location.hash);
+							}
+						});
+					</script>
 				</div>
 			</div>
 		</section>
